@@ -1,0 +1,31 @@
+
+<div class="container">
+  <h1>Contacts</h1>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Contacts</div>
+    <div class="panel-body">
+
+      <input type="text" name="" value="Filtre" class="form-control ng-pristine ng-untouched ng-valid">
+
+      <table class="table table-striped">
+        {{#if model.datas}}
+
+        {{/if}}
+      </table>
+      <fieldset class="container form-group form-inline">
+        <form class="" action="" method="post">
+          <legend class="ng-binding">Ajouter un contact</legend>
+          <Input type="text" name="nom" @value={{model}} class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Entrez un nom"/>
+          <Input type="text" name="prenom" @value={{model}} class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Entrez un prenom"/>
+          <Input type="email" name="email" @value={{model}} class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Entrez un email"/>
+
+          <input type="submit" name="Valider" value="Valider" class="btn btn-primary"/>
+          <input type="button" name="Annuler" value="Annuler" class="btn btn-primary"/>
+        </form>
+      </fieldset>
+
+    </div>
+  </div>
+</div>
+
+{{outlet}}
