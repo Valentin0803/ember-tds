@@ -1,0 +1,25 @@
+<br><br>
+
+<div class="ui container">
+
+  <div class="ui icon message">
+    <i class="question circle icon"></i>
+    <div class="content">
+      <div class="header">
+        <p>Confirmez la suppresion de '{{model.identity}}' ?</p>
+
+        <button class="ui button green" type="delete" {{action "delete" model}}>
+          <i class="icon check circle"></i>
+          Valider
+        </button>
+
+        <LinkTo @route="developers" class="ui button">
+          <i class="times circle icon"></i>Annuler
+        </LinkTo>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+{{outlet}}

@@ -1,0 +1,21 @@
+
+<div class="ui container">
+  <br>
+  <div class="ui divider"></div>
+  <h2>Ajout developer</h2>
+
+  <div class="ui input">
+    <Input type="text" name="identity" placeholder="Name" @value={{model.identity}}/>
+  </div>
+  <br>
+  <br>
+  <button class="ui button green" type="submit" {{action "save" model}}>
+    <i class="icon check circle"></i>Valider
+  </button>
+
+  <LinkTo @route="developers" class="ui button">
+    <i class="times circle icon"></i>Annuler
+  </LinkTo>
+
+</div>
+

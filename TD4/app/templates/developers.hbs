@@ -1,0 +1,41 @@
+<div class="ui container">
+
+  <h1 class="ui header">
+    <i class="table icon"></i>
+    <span class="content">
+      models/Developer
+      <span class="sub header">Data administration</span>
+    </span>
+  </h1>
+
+  <LinkTo @route="developers.new" class="ui orange button">
+    <i class="icon plus"></i>
+    Add developer
+  </LinkTo>
+
+    <table class="ui selectable single line table">
+      <thead>
+      <tr>
+        <th>Identity</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each model as |developer|}}
+        <tr>
+          <td>{{developer.identity}}</td>
+          <td class="right aligned">
+            <LinkTo @route="developers.edit" @model={{developer}} class="circular ui basic icon button">
+              <i class="icon edit"></i>
+            </LinkTo>
+            <LinkTo @route="developers.delete" @model={{developer}} class="circular ui inverted red icon button">
+              <i class="icon times"></i>
+            </LinkTo>
+          </td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+
+</div>
+{{outlet}}

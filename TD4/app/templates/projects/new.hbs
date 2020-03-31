@@ -1,0 +1,38 @@
+
+<div class="ui container">
+  <br>
+  <div class="ui divider"></div>
+  <h2>Ajout projet</h2>
+  <form class="ui form">
+
+      <label for="name">Name: </label>
+      <Input type="text" name="name" placeholder="Name" @value={{model.name}}/>
+
+      <br><br>
+      <label for="descriptif">Descriptif: </label>
+      <Input type="text" name="descriptif" placeholder="Descriptif" @value={{model.descriptif}}/>
+      <br><br>
+
+      <label for="startDate">Start date: </label>
+        <Input type="date" name="startDate" placeholder="date de debut" @value={{model.startDate}}/>
+
+      <label for="dueDate">Due date: </label>
+      <Input type="date" name="dueDate" placeholder="dueDate" @value={{model.dueDate}}/>
+      <br><br>
+
+    <label for="owner">Owner: </label>
+    <select class="ui fluid dropdown" name="owner" id="owner">
+        {{#each model as |developer|}}
+          <option>{{developer.identity}}</option>
+        {{/each}}
+    </select>
+    <br><br>
+    <button class="ui button green" type="submit" {{action "save" model}}>
+      <i class="icon check circle"></i>Valider
+    </button>
+
+    <LinkTo @route="projects" class="ui button">
+      <i class="times circle icon"></i>Annuler
+    </LinkTo>
+  </form>
+</div>

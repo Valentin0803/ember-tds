@@ -1,0 +1,47 @@
+<div class="ui container">
+
+  <h1 class="ui header">
+    <i class="table icon"></i>
+    <span class="content">
+      models/Project
+      <span class="sub header">Data administration</span>
+    </span>
+  </h1>
+
+  <LinkTo @route="projects.new" class="ui orange button">
+    <i class="icon plus"></i>
+    Add project
+  </LinkTo>
+
+  <table class="ui selectable single line table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Descriptif</th>
+      <th>Start Date</th>
+      <th>Due Date</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each model as |project|}}
+      <tr>
+        <td>{{project.name}}</td>
+        <td>{{project.descriptif}}</td>
+        <td>{{project.startDate}}</td>
+        <td>{{project.dueDate}}</td>
+        <td class="right aligned">
+          <LinkTo @route="projects.edit" @model={{project}} class="circular ui basic icon button">
+            <i class="icon edit"></i>
+          </LinkTo>
+          <LinkTo @route="projects.delete" @model={{project}} class="circular ui inverted red icon button">
+            <i class="icon times"></i>
+          </LinkTo>
+        </td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+
+</div>
+{{outlet}}

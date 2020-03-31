@@ -1,0 +1,36 @@
+<br><br>
+
+<div class="ui container">
+
+  <form class="ui form">
+    <div class="ui field">
+      <div class="field">
+        <label for="name">Name</label>
+        <Input @value={{model.name}} type="text" name="name" placeholder="name"/>
+        <br><br>
+
+        <label for="name">Name</label>
+        <Input @value={{model.descriptif}} type="text" name="name" placeholder="name"/>
+        <br><br>
+
+        <label for="name">Name</label>
+        <Input @value={{model.startDate}} type="date" name="name" placeholder="name"/>
+        <br><br>
+
+        <label for="name">Name</label>
+        <Input @value={{model.dueDate}} type="date" name="name" placeholder="name"/>
+        <br><br>
+
+        <button class="ui button green" type="submit" {{action "save" model}}>
+          <i class="icon check circle"></i>
+          Valider
+        </button>
+        <LinkTo @route="projects" class="ui button"><i class="times circle icon"></i>Annuler</LinkTo>
+
+      </div>
+    </div>
+  </form>
+
+</div>
+
+{{outlet}}
